@@ -1,0 +1,57 @@
+<h2>Записаться</h2>
+
+
+
+
+<form action="/visit" method="post">
+  <div class="form-group">
+    <label for="exampleInputEmail1">Ваше имя</label>
+    <input name="user_name" type="text" class="form-control" id="exampleInputEmail1" placeholder="Введите ваше имя" value="<%= @user_name %>">
+  </div>
+   <div class="form-group">
+    <label for="exampleInputEmail1">Телефон</label>
+    <input name="phone" type="text" class="form-control" id="exampleInputEmail1" placeholder="Введите ваш Телефон" value="<%= @phone %>">
+  </div>
+   <div class="form-group">
+    <label for="exampleInputEmail1">Время записи</label>
+    <input id="datetimepicker" name="time" type="text" class="form-control" id="exampleInputEmail1" placeholder="Введите Время" value="<%= @time %>">
+  </div>
+
+<div class="form-group">
+    <label>Цвет краски</label>
+ </div>
+<select id="color" name="color">
+  <option value="#7bd148">Green</option>
+  <option value="#5484ed">Bold Kk
+  <option value="#a4bdfc">Blue</option>
+  <option value="#46d6db">Turquoise</option>
+  <option value="#7ae7bf">Light green</option>
+  <option value="#51b749">Bold green</option>
+  <option value="#fbd75b">Yellow</option>
+  <option value="#ffb878">Orange</option>
+  <option value="#ff887c">Red</option>
+  <option value="#dc2127">Bold red</option>
+  <option value="#dbadff">Purple</option>
+  <option value="#e1e1e1">Gray</option>
+</select>
+
+  <label>Ваш парикхмахер</label>
+  <select name="barber" class="form-control">
+  <option <%=@barber == 'Walter White'? 'selected': '' %>>Walter White</option>
+  <option <%=@barber == 'Gus Fring'? 'selected': '' %>>Gus Fring</option>
+  <option <%=@barber == 'Jessie Pinkman'? 'selected': '' %>>Jessie Pinkman</option>
+  </select>
+    <button type="submit" class="btn btn-default">Записаться</button>
+</form>
+
+
+<script type="text/javascript">
+
+$(function(){
+$('#color').simplecolorpicker();
+
+$('#datetimepicker').datetimepicker();
+ });
+</script>
+
+
